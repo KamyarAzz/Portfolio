@@ -1,0 +1,18 @@
+#first {
+  animation: first 15s linear 0.10s infinite;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes first {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+svg {
+  height: 80%;
+  width: 80%;
+}
