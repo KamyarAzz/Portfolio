@@ -1,0 +1,14 @@
+.animation{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: rotate 10s none 0s infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
