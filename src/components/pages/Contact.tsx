@@ -25,8 +25,8 @@ export default function Contact() {
   ];
 
   return (
-    <BlurFade className="flex flex-wrap items-center gap-16 !justify-center w-full mx-auto md:flex-nowrap md:justify-between">
-      <div className="hidden md:flex">
+    <BlurFade className="flex flex-wrap md:flex-nowrap !justify-center md:justify-between items-center gap-16 mx-auto w-full h-max">
+      <div className="md:flex hidden">
         <IconCloud iconSlugs={slugs} />
       </div>
       <div className="flex flex-col gap-6 md:gap-10">

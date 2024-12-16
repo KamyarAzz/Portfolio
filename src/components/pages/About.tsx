@@ -20,7 +20,7 @@ export default function About() {
     <div className="flex flex-col w-full h-max">
       <BlurFade>
         <Seperator className="!mt-0">{t("education")}</Seperator>
-        <div className="flex flex-col w-full gap-6">
+        <div className="flex flex-col gap-6 w-full">
           <AboutItem
             href="https://iau.ir/"
             src={uniLogo}
@@ -49,7 +49,7 @@ export default function About() {
       </BlurFade>
       <BlurFade delay={0.4}>
         <Seperator>{t("certificates")}</Seperator>
-        <div className="flex flex-col w-full gap-6">
+        <div className="flex flex-col gap-6 w-full">
           <AboutItem
             href={certificate7}
             src={harvardLogo}

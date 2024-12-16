@@ -14,16 +14,6 @@
   --scrollbar-bg: #2c2c2c;
 }
 
-/* Reset CSS */
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 /* Fonts */
 
 @font-face {
@@ -39,6 +29,16 @@
 @font-face {
   font-family: "sahel";
   src: url("./assets/fonts/Sahel.ttf");
+}
+
+/* Reset CSS */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Styles */
@@ -151,4 +151,4 @@ body,
   body {
     @apply bg-background text-foreground;
   }
-} 
+}

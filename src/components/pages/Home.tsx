@@ -20,11 +20,11 @@ export default function Home() {
   return (
     <div
       className={clsx(
-        "flex md:flex-row-reverse flex-col items-center md:justify-center md:gap-16 lg:gap-24",
+        "flex md:flex-row-reverse flex-col md:justify-center items-center md:gap-16 lg:gap-24 w-full h-max min-h-full",
         theme === "light" ? "text-black" : "text-white"
       )}
     >
-      <BlurFade>
+      <BlurFade className="z-50">
         <ProfilePicture />
       </BlurFade>
       <BlurFade
@@ -36,7 +36,7 @@ export default function Home() {
         <p className="text-lg md:text-xl">{t("welcome")}</p>
         <h1
           className={clsx(
-            "flex flex-col text-4xl font-semibold text-left md:text-7xl",
+            "flex flex-col font-semibold text-4xl text-left md:text-7xl",
             i18n.dir(i18n.language) === "rtl" ? "text-right" : "text-left"
           )}
         >
@@ -56,7 +56,7 @@ export default function Home() {
           {t("contactBtn")}
         </Button>
       </BlurFade>
-      <Ripple mainCircleOpacity={100} className="hidden md:flex" />
+      <Ripple mainCircleOpacity={100} className="md:flex hidden" />
     </div>
   );
 }
