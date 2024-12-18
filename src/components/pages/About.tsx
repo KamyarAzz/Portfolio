@@ -6,13 +6,10 @@ import uniLogo from "@/assets/images/Azad-University-Logo.svg";
 import smpLogo from "@/assets/images/smpLogo.svg";
 import mftLogo from "@/assets/images/cropped-logo-dark.png";
 import harvardLogo from "@/assets/images/Harvard-Logo.png";
-import certificate1 from "@/assets/images/certificates/mft/certificate-en1.jpg";
-import certificate2 from "@/assets/images/certificates/mft/certificate-en2.jpg";
-import certificate3 from "@/assets/images/certificates/mft/certificate-en3.jpg";
-import certificate4 from "@/assets/images/certificates/cs50/CS50x.pdf";
-import certificate5 from "@/assets/images/certificates/cs50/CS50p.pdf";
-import certificate6 from "@/assets/images/certificates/mft/certificate-en.jpeg";
-import certificate7 from "@/assets/images/certificates/cs50/CS50ai.pdf";
+import certificateWebDesign1 from "@/assets/images/certificates/mft/certificate-en1.jpg";
+import certificateWebDesign2 from "@/assets/images/certificates/mft/certificate-en2.jpg";
+import certificateWebDesign3 from "@/assets/images/certificates/mft/certificate-en3.jpg";
+import certificatePython from "@/assets/images/certificates/mft/certificate-en.jpeg";
 
 export default function About() {
   const {t} = useTranslation();
@@ -51,49 +48,49 @@ export default function About() {
         <Seperator>{t("certificates")}</Seperator>
         <div className="flex flex-col gap-6 w-full">
           <AboutItem
-            href={certificate7}
+            href="https://cs50.harvard.edu/certificates/f7428f28-6c90-4333-b907-cc1d22ac4cbc"
             src={harvardLogo}
             duration="2024"
             upperText={t("harvard")}
             lowerText="CS50AI"
           />
           <AboutItem
-            href={certificate5}
+            href="https://cs50.harvard.edu/certificates/96a6a034-5899-413b-a542-93e7ab6ba2ab"
             src={harvardLogo}
             duration="2024"
             upperText={t("harvard")}
             lowerText="CS50P"
           />
           <AboutItem
-            href={certificate3}
+            href={certificateWebDesign3}
             src={mftLogo}
             duration="2024"
             upperText={t("mft")}
             lowerText={t("webDesign3")}
           />
           <AboutItem
-            href={certificate4}
+            href="https://cs50.harvard.edu/certificates/384a58cd-1192-4c5c-a680-42fab56dd884"
             src={harvardLogo}
             duration="2023"
             upperText={t("harvard")}
             lowerText="CS50X"
           />
           <AboutItem
-            href={certificate2}
+            href={certificateWebDesign2}
             src={mftLogo}
             duration="2022"
             upperText={t("mft")}
             lowerText={t("webDesign2")}
           />
           <AboutItem
-            href={certificate1}
+            href={certificateWebDesign1}
             src={mftLogo}
             duration="2021"
             upperText={t("mft")}
             lowerText={t("webDesign1")}
           />
           <AboutItem
-            href={certificate6}
+            href={certificatePython}
             src={mftLogo}
             duration="2020"
             upperText={t("mft")}
