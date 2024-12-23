@@ -24,7 +24,7 @@ export default function Home() {
         theme === "light" ? "text-black" : "text-white"
       )}
     >
-      <BlurFade className="z-50">
+      <BlurFade className="z-40">
         <ProfilePicture />
       </BlurFade>
       <BlurFade

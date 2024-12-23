@@ -5,10 +5,10 @@ import Skills from "./components/pages/Skills";
 import Contact from "./components/pages/Contact";
 import Socials from "./components/socials/Socials";
 import {reduxState} from "./lib/type";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {setIsMobile} from "./redux/isMobileSlice";
 import Tooltip from "./components/ui/Tolltip";
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Projects from "./components/pages/Projects";
 import About from "./components/pages/About";
@@ -18,9 +18,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   // states and hooks
+  const location = useLocation();
   const theme = useSelector((state: reduxState) => state.theme);
   const dispatch = useDispatch();
   const {i18n} = useTranslation();
+  const scrollableRef = useRef<HTMLDivElement>(null);
 
   // handle resize
   useEffect(() => {
@@ -43,10 +45,16 @@ function App() {
     else root.style.setProperty("--scrollbar-bg", "#fff");
   }, [theme]);
 
+  useEffect(() => {
+    if (scrollableRef.current) {
+      scrollableRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
+
   const tooltip = useSelector((state: reduxState) => state.tooltip);
 
   return (
-    <div className="relative flex flex-col font-[sahel,dirooz,gandom] w-full h-full overflow-hidden bg-lightBg dark:bg-darkBg">
+    <div className="relative flex flex-col bg-lightBg dark:bg-darkBg w-full h-full font-[sahel,dirooz,gandom] overflow-hidden">
       {tooltip.isVisible && <Tooltip text={tooltip.text} />}
       <ToastContainer
         toastClassName="dark:bg-[#121212] bg-white text-black dark:text-white"
@@ -54,7 +62,10 @@ function App() {
       />
       <Socials />
       <Header />
-      <div className="flex w-full h-full px-4 py-5 overflow-y-auto md:py-10 md:px-20 lg:px-[7.5rem]">
+      <div
+        ref={scrollableRef}
+        className="flex px-4 md:px-20 lg:px-[7.5rem] py-5 md:py-10 w-full h-full overflow-y-auto"
+      >
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />

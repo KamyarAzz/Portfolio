@@ -177,7 +177,7 @@ export default function Header() {
 
   return (
     <header
-      className="top-0 z-50 sticky flex flex-row justify-between px-4 md:px-8 py-1.5 md:py-3 w-full bg-[#FEFAF6] text-black dark:bg-darkBg dark:text-white"
+      className="top-0 z-50 sticky flex flex-row justify-between bg-[#FEFAF6] dark:bg-darkBg px-4 md:px-8 py-1.5 md:py-3 w-full text-black dark:text-white"
       style={{
         boxShadow: `0px 2px 8px ${theme === "dark" ? "#1e1e1e" : "#ddd"}`,
       }}
@@ -191,14 +191,14 @@ export default function Header() {
       </Link>
       <nav
         className={clsx(
-          "items-end justify-center flex-grow hidden gap-5 text-lg list-none md:flex",
+          "md:flex flex-grow justify-center items-end gap-5 hidden text-lg list-none",
           i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
         )}
       >
         <Link
           to="/home"
           className={clsx(
-            "cursor-pointer hover:text-red-700 border-b-[1px]",
+            "border-b-[1px] hover:text-red-700 cursor-pointer",
             location.pathname === "/home"
               ? "border-red-700"
               : "border-transparent"
@@ -209,7 +209,7 @@ export default function Header() {
         <Link
           to="/about"
           className={clsx(
-            "cursor-pointer hover:text-red-700 border-b-[1px]",
+            "border-b-[1px] hover:text-red-700 cursor-pointer",
             location.pathname === "/about"
               ? "border-red-700"
               : "border-transparent"
@@ -220,7 +220,7 @@ export default function Header() {
         <Link
           to="/skills"
           className={clsx(
-            "cursor-pointer hover:text-red-700 border-b-[1px]",
+            "border-b-[1px] hover:text-red-700 cursor-pointer",
             location.pathname === "/skills"
               ? "border-red-700"
               : "border-transparent"
@@ -231,7 +231,7 @@ export default function Header() {
         <Link
           to="/projects"
           className={clsx(
-            "cursor-pointer hover:text-red-700 border-b-[1px]",
+            "border-b-[1px] hover:text-red-700 cursor-pointer",
             location.pathname === "/projects"
               ? "border-red-700"
               : "border-transparent"
@@ -242,7 +242,7 @@ export default function Header() {
         <Link
           to="/contact"
           className={clsx(
-            "cursor-pointer hover:text-red-700 border-b-[1px]",
+            "border-b-[1px] hover:text-red-700 cursor-pointer",
             location.pathname === "/contact"
               ? "border-red-700"
               : "border-transparent"
@@ -251,7 +251,7 @@ export default function Header() {
           {t("menu3")}
         </Link>
       </nav>
-      <div className="flex flex-row items-end justify-end gap-3 text-lg md:gap-4">
+      <div className="flex flex-row justify-end items-end gap-3 md:gap-4 text-lg">
         <div
           ref={langRef}
           className="relative flex flex-col items-center w-8 h-8 cursor-pointer"
@@ -276,12 +276,12 @@ export default function Header() {
               overflow: "hidden",
             }}
           >
-            <div className="flex flex-col items-center justify-center gap-5">
+            <div className="flex flex-col justify-center items-center gap-5">
               {availableLangs.map((flag: TFlag) => (
                 <img
                   onMouseEnter={() => enterHoverHandler(flag.name)}
                   onMouseLeave={() => exitHoverHandler()}
-                  className="min-h-8 min-w-8"
+                  className="min-w-8 min-h-8"
                   key={flag.name}
                   src={flag.src}
                   alt={flag.name}
@@ -292,7 +292,7 @@ export default function Header() {
           </div>
         </div>
         <div
-          className="flex items-center justify-center w-8 h-8"
+          className="flex justify-center items-center w-8 h-8"
           title={t("sideMenu2")}
         >
           {theme === "light" ? (
@@ -322,13 +322,13 @@ export default function Header() {
           )}
         </div>
         <div
-          className="relative flex flex-col items-center justify-center w-8 h-8 cursor-pointer"
+          className="relative flex flex-col justify-center items-center w-8 h-8 cursor-pointer"
           title={t("sideMenu3")}
           ref={cvRef}
         >
           <svg
             onClick={switchCV}
-            className="z-50 transition-transform duration-100 min-h-6 hover:-rotate-12"
+            className="z-50 min-h-6 transition-transform duration-100 hover:-rotate-12"
             onMouseEnter={() => addHover("third")}
             onMouseLeave={removeHover}
             fill={
@@ -358,7 +358,7 @@ export default function Header() {
               overflow: "hidden",
             }}
           >
-            <div className="flex flex-col items-center justify-center gap-5">
+            <div className="flex flex-col justify-center items-center gap-5">
               <a
                 onClick={() => setOpenCV(false)}
                 href={englishCV}
