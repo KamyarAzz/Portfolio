@@ -10,6 +10,7 @@ import certificateWebDesign1 from "@/assets/images/certificates/mft/certificate-
 import certificateWebDesign2 from "@/assets/images/certificates/mft/certificate-en2.jpg";
 import certificateWebDesign3 from "@/assets/images/certificates/mft/certificate-en3.jpg";
 import certificatePython from "@/assets/images/certificates/mft/certificate-en.jpeg";
+// import ieltsLogo from "@/assets/images/IELTS-logo.png";
 
 export default function About() {
   const {t} = useTranslation();
@@ -47,6 +48,13 @@ export default function About() {
       <BlurFade delay={0.4}>
         <Seperator>{t("certificates")}</Seperator>
         <div className="flex flex-col gap-6 w-full">
+          {/* <AboutItem
+            href="link to file or website"
+            src={ieltsLogo}
+            duration="2025"
+            upperText="IELTS"
+            lowerText="Band Score: 7.5"
+          /> */}
           <AboutItem
             href="https://cs50.harvard.edu/certificates/f7428f28-6c90-4333-b907-cc1d22ac4cbc"
             src={harvardLogo}
