@@ -4,8 +4,8 @@ import {useTranslation} from "react-i18next";
 import clsx from "clsx";
 import {reduxState} from "@/lib/type";
 import Button from "@/components/ui/Button";
-import Ripple from "@/components/ui/ripple";
-import BlurFade from "@/components/ui/blur-fade";
+import Ripple from "@/components/ui/animations/ripple";
+import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
 import ProfilePicture from "@/components/ui/ProfilePicture";
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
 
         <Button
           onClick={btnClickHandler}
-          className="my-1.5 md:my-4 mb-4 w-max text-lg md:text-xl"
+          className="md:my-4 mt-1.5 w-max text-lg md:text-xl"
         >
           {t("contactBtn")}
         </Button>

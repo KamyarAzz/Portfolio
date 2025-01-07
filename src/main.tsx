@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
 import {Provider} from "react-redux";
-import store from "./redux/store.ts";
 import {I18nextProvider} from "react-i18next";
 import i18n from "i18next";
+import App from "./App.tsx";
+import store from "./redux/store.ts";
+import "./index.css";
 import enTranslations from "@/features/enTranslations.json";
 import faTranslations from "@/features/faTranslations.json";
 import itTranslations from "@/features/itTranslations.json";

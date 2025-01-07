@@ -7,7 +7,7 @@ import Socials from "./components/socials/Socials";
 import {reduxState} from "./lib/type";
 import {useEffect, useRef} from "react";
 import {setIsMobile} from "./redux/isMobileSlice";
-import Tooltip from "./components/ui/Tolltip";
+import Tooltip from "./components/ui/Tooltip";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Projects from "./components/pages/Projects";

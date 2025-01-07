@@ -1,10 +1,10 @@
 import {useTranslation} from "react-i18next";
 import clsx from "clsx";
-import "@/css/animations.css";
-import ScrollAnimation from "@/components/ui/scroll_animation/ScrollAnimation";
+import ScrollAnimation from "@/components/ui/animations/SkillsAnimation";
 import Seperator from "@/components/ui/Seperator";
-import SkillBox from "@/components/ui/SkillBox";
-import BlurFade from "@/components/ui/blur-fade";
+import SkillBox from "@/components/ui/containers/SkillBox";
+import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
+import "@/css/animations.css";
 
 export default function Skills() {
   const {t, i18n} = useTranslation();

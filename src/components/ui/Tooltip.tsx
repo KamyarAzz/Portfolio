@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 
-const Tolltip = ({text}: {text: string}) => {
+const Tooltip = ({text}: {text: string}) => {
   const [position, setPosition] = useState({x: 0, y: 0});
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Tolltip = ({text}: {text: string}) => {
 
   return (
     <div
-      className="border-[1px] z-[99] border-red-700 rounded-md p-2 text-white"
+      className="z-[99] border-[1px] p-2 border-red-700 rounded-md text-white"
       style={followerStyle}
     >
       {text}
@@ -38,4 +38,4 @@ const Tolltip = ({text}: {text: string}) => {
   );
 };
 
-export default Tolltip;
+export default Tooltip;

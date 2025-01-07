@@ -6,7 +6,7 @@ import confetti from "canvas-confetti";
 import clsx from "clsx";
 import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
-import GradualSpacing from "@/components/ui/gradual-spacing";
+import GradualSpacing from "@/components/ui/animations/text_animations/gradual-spacing";
 import {reduxState} from "@/lib/type";
 
 export default function ContactForm() {
@@ -76,7 +76,7 @@ export default function ContactForm() {
       ref={form}
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        "flex flex-col items-center gap-5 p-6 md:p-8 md:text-lg dark:bg-[#303030] bg-[#fdfdfd] text-black rounded-md dark:text-white",
+        "flex flex-col items-center gap-5 bg-[#fdfdfd] dark:bg-[#303030] p-6 md:p-8 rounded-md text-black md:text-lg dark:text-white",
         i18n.dir(i18n.language) === "ltr" ? "ltr" : "rtl"
       )}
       style={{
@@ -85,18 +85,18 @@ export default function ContactForm() {
     >
       {i18n.dir(i18n.language) === "ltr" ? (
         <GradualSpacing
-          className="text-4xl font-bold text-center font-display md:text-4xl"
+          className="font-bold font-display text-4xl text-center md:text-4xl"
           text={t("formTitle")}
         />
       ) : (
-        <h1 className="text-4xl font-bold text-center font-display md:text-4xl">
+        <h1 className="font-bold font-display text-4xl text-center md:text-4xl">
           {t("formTitle")}
         </h1>
       )}
       <div className="flex flex-wrap gap-6">
         <div className="flex flex-col flex-grow">
           <div
-            className="flex justify-between w-full gap-4 px-4 py-2 bg-white rounded-md md:py-1 dark:bg-darkBg "
+            className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
             style={{
               boxShadow: `0px 0px 3px ${
                 theme === "dark" ? "black" : "#999"
@@ -118,7 +118,7 @@ export default function ContactForm() {
         </div>
         <div className="flex flex-col flex-grow">
           <div
-            className="flex justify-between w-full gap-4 px-4 py-2 bg-white rounded-md md:py-1 dark:bg-darkBg"
+            className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
             style={{
               boxShadow: `0px 0px 3px ${
                 theme === "dark" ? "black" : "#999"
@@ -141,7 +141,7 @@ export default function ContactForm() {
       </div>
       <div className="flex flex-col w-full">
         <div
-          className="flex justify-between w-full gap-4 px-4 py-2 bg-white rounded-md md:py-1 dark:bg-darkBg"
+          className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
           style={{
             boxShadow: `0px 0px 3px ${
               theme === "dark" ? "black" : "#999"
@@ -150,7 +150,7 @@ export default function ContactForm() {
         >
           <label htmlFor="description">{t("formDesc")}:</label>
           <textarea
-            className="w-full overflow-y-auto bg-transparent resize-none focus:outline-none h-36 text-start"
+            className="bg-transparent w-full h-36 text-start overflow-y-auto focus:outline-none resize-none"
             {...register("description", {
               required: t("error3"),
             })}
@@ -166,7 +166,7 @@ export default function ContactForm() {
       </div>
       <input
         disabled={isSubmitting}
-        className="px-7 border-red-700 py-1.5 duration-200 dark:bg-red-700 bg-transparent text-red-700 dark:text-white rounded-md border-2 dark:border-transparent cursor-pointer w-min disabled:!bg-transparent disabled:!border-gray-500 disabled:!text-gray-500 hover:text-red-900 hover:border-red-900 hover:dark:bg-red-900 disabled:!cursor-default"
+        className="border-2 disabled:!border-gray-500 bg-transparent hover:dark:bg-red-900 disabled:!bg-transparent dark:bg-red-700 px-7 py-1.5 dark:border-transparent border-red-700 hover:border-red-900 rounded-md w-min text-red-700 hover:text-red-900 disabled:!text-gray-500 dark:text-white duration-200 cursor-pointer disabled:!cursor-default"
         type="submit"
         value={t("send")}
         id="submit"

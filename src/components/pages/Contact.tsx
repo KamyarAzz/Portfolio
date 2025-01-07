@@ -1,7 +1,7 @@
 import ContactForm from "@/components/form/ContactForm";
-import BlurFade from "@/components/ui/blur-fade";
+import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
 import ContactInfo from "@/components/ui/ContactInfo";
-import IconCloud from "@/components/ui/icon-cloud";
+import IconCloud from "@/components/ui/magic_ui/icon-cloud";
 import {reduxState} from "@/lib/type";
 import {useSelector} from "react-redux";
 

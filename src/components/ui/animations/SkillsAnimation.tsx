@@ -1,7 +1,7 @@
 import {useDispatch} from "react-redux";
 import {setTooltip} from "@/redux/tooltipSlice";
 
-export default function ScrollAnimation() {
+export default function SkillsAnimation() {
   const dispatch = useDispatch();
 
   const enterHoverHandler = (text: string) => {
@@ -13,13 +13,13 @@ export default function ScrollAnimation() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-min ltr">
+    <div className="flex flex-col justify-center items-center w-full h-min ltr">
       <div className="relative z-20 flex w-full h-20 overflow-hidden">
         <div
           className="left-0 z-50 absolute justify-self-start bg-red-700 rounded-full w-[2px] h-full"
           style={{boxShadow: "0px 0px 22px 5px #b91c1c"}}
         ></div>
-        <div className="relative flex items-center justify-end w-full h-full py-1 overflow-hidden bg-transparent">
+        <div className="relative flex justify-end items-center bg-transparent py-1 w-full h-full overflow-hidden">
           <div
             id="first"
             className="flex flex-row flex-nowrap justify-between items-center gap-4 px-2 md:px-0 w-[200%] min-w-[200%] h-full font-sans select-none"

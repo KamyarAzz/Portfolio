@@ -2,8 +2,8 @@ import {useState} from "react";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import clsx from "clsx";
-import {MagicCard} from "./magic-card";
-import {BorderBeam} from "./border-beam";
+import {MagicCard} from "../magic_ui/magic-card";
+import {BorderBeam} from "../animations/container_animations/border-beam";
 import {reduxState} from "@/lib/type";
 
 type Props = {
@@ -22,31 +22,31 @@ export default function ProjectLayout({title, image, stack, text}: Props) {
   return (
     <MagicCard
       setIsHovering={setIsHovering}
-      className="flex-col !items-stretch h-full mx-auto shadow-2xl rounded-xl !justify-stretch w-72 md:w-80 whitespace-nowrap"
+      className="flex-col !justify-stretch !items-stretch shadow-2xl mx-auto rounded-xl w-72 md:w-80 h-full whitespace-nowrap"
       gradientColor={theme === "dark" ? "#262626" : "#D0D0D0"}
     >
       <img
         loading="lazy"
-        className="w-full bg-white shadow-lg aspect-video"
+        className="bg-white shadow-lg w-full aspect-video"
         src={image}
         alt={title}
       />
       <div className="flex flex-col gap-6 px-2.5 py-3 h-full">
-        <h4 className="pt-2 pb-1 text-xl text-center md:text-2xl">{title}</h4>
-        <div className="flex flex-col justify-between h-full gap-6">
+        <h4 className="pt-2 pb-1 text-center text-xl md:text-2xl">{title}</h4>
+        <div className="flex flex-col justify-between gap-6 h-full">
           <p
             className={clsx(
-              "text-base flex-wrap flex h-max text-wrap",
+              "flex flex-wrap h-max text-base text-wrap",
               i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr"
             )}
           >
             {t(`${text}`)}
           </p>
-          <div className="flex flex-wrap items-end gap-2 text-sm text-gray-600 h-min dark:text-gray-300">
+          <div className="flex flex-wrap items-end gap-2 h-min text-gray-600 text-sm dark:text-gray-300">
             {stack?.map((item, index) => (
               <div
                 key={index}
-                className="border-[1px]  py-0.5 border-transparent px-1 flex items-center rounded-md text-black dark:text-white bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:bg-[#262626] dark:hover:bg-[#161616] duration-200 text-xs"
+                className="flex items-center border-[1px] bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:hover:bg-[#161616] dark:bg-[#262626] px-1 py-0.5 border-transparent rounded-md text-black text-xs dark:text-white duration-200"
               >
                 {item}
               </div>

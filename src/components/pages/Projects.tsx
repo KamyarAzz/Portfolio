@@ -1,5 +1,5 @@
-import ProjectLayout from "@/components/ui/ProjectLayout";
-import BlurFade from "@/components/ui/blur-fade";
+import ProjectLayout from "@/components/ui/containers/ProjectCard";
+import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
 import stockGif from "@/assets/gifs/stockGif.gif";
 import nftGif from "@/assets/gifs/nftGif.gif";
 import alibabaCloneGif from "@/assets/gifs/alibabaCloneGif.gif";
@@ -84,7 +84,7 @@ const projectsList = [
 
 export default function Projects() {
   return (
-    <div className="grid items-stretch w-full grid-cols-1 gap-10 h-max justify-stretch md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="justify-stretch items-stretch gap-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full h-max">
       {projectsList.map((project, index) => (
         <BlurFade key={project.title} delay={+`0.${index}`}>
           <ProjectLayout
