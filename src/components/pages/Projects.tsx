@@ -1,13 +1,13 @@
 import ProjectLayout from "@/components/ui/containers/ProjectCard";
 import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
-import stockGif from "@/assets/gifs/stockGif.gif";
-import nftGif from "@/assets/gifs/nftGif.gif";
-import alibabaCloneGif from "@/assets/gifs/alibabaCloneGif.gif";
-import restaurantGif from "@/assets/gifs/restaurantGif.gif";
-import housingGif from "@/assets/gifs/housingGif.gif";
-import acv6Gif from "@/assets/gifs/acv6Gif.gif";
-import studentGif from "@/assets/gifs/studentGif.gif";
-import dinningGif from "@/assets/gifs/dinningGif.gif";
+import stockGif from "@/assets/gifs/stockManagement.gif";
+import nftGif from "@/assets/gifs/nftMarketPlace.gif";
+import alibabaCloneGif from "@/assets/gifs/alibabaClone.gif";
+import restaurantGif from "@/assets/gifs/restaurantMenu.gif";
+import housingGif from "@/assets/gifs/housingCorporation.gif";
+import acv6Gif from "@/assets/gifs/accessControl.gif";
+import studentGif from "@/assets/gifs/studentJob.gif";
+import dinningGif from "@/assets/gifs/viunaDinning.gif";
 
 const projectsList = [
   {
