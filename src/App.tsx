@@ -64,7 +64,7 @@ function App() {
       <Header />
       <div
         ref={scrollableRef}
-        className="flex px-4 md:px-20 lg:px-[7.5rem] py-5 md:py-10 w-full h-full overflow-y-auto"
+        className="flex px-4 md:px-20 lg:px-[7.5rem] md:py-10 pt-8 pb-4 w-full h-full overflow-y-auto"
       >
         <Routes>
           <Route path="/home" element={<Home />} />

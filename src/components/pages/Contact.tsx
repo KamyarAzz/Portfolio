@@ -37,7 +37,7 @@ export default function Contact() {
       <div className="md:flex hidden">
         <IconCloud iconSlugs={slugs} theme={theme} />
       </div>
-      <div className="flex flex-col gap-6 md:gap-10">
+      <div className="flex flex-col gap-6 md:gap-8">
         <ContactForm />
         <ContactInfo />
       </div>

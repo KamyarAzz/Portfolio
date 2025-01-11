@@ -113,9 +113,6 @@ export default function Skills() {
           <SkillBox className="hover:bg-blue-500 border-blue-500">
             Chart.js
           </SkillBox>
-          <SkillBox className="hover:bg-blue-500 border-blue-500">
-            Mantine
-          </SkillBox>
         </div>
         <Seperator>
           <span className="text-rose-700">•</span> {t("devTools")}

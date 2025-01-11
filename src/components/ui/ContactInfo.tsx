@@ -12,7 +12,7 @@ export default function ContactInfo() {
   return (
     <div
       className={clsx(
-        "flex flex-col gap-6 mb-4 py-6 px-10 bg-[#fdfdfd] dark:bg-[#303030] text-black rounded-md dark:text-white",
+        "flex flex-col gap-6 bg-[#fdfdfd] dark:bg-[#303030] px-10 py-6 rounded-md text-black dark:text-white",
         i18n.dir(i18n.language) === "ltr" ? "ltr" : "rtl"
       )}
       style={{
@@ -57,7 +57,7 @@ export default function ContactInfo() {
       {isMobile && (
         <>
           <Seperator children="" className="!my-0" />
-          <div className="flex items-center justify-center gap-10">
+          <div className="flex justify-center items-center gap-10">
             <a href="https://www.linkedin.com/in/kamyarazz/" target="_blank">
               <div className="cursor-pointer" title="Linkedin">
                 <svg
