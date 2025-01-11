@@ -11,8 +11,8 @@ import arabicFlag from "@/assets/images/flags/saudi arabia 1.svg";
 import italianFlag from "@/assets/images/flags/italy.svg";
 import spanishFlag from "@/assets/images/flags/spain 1.svg";
 import {setTooltip} from "@/redux/tooltipSlice";
-import englishCV from "@/assets/cv/Kamyar Azizi - CV.pdf";
-import farsiCV from "@/assets/cv/Kamyar Azizi - Farsi CV.pdf";
+import englishCV from "@/assets/resume/Kamyar Azizi - Resume.pdf";
+import farsiCV from "@/assets/resume/رزومه کامیار عزیزی.pdf";
 
 type TFlag = {
   name: string;
