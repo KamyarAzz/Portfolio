@@ -1,19 +1,21 @@
+import {useEffect, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {ToastContainer} from "react-toastify";
+import {useTranslation} from "react-i18next";
+import {Navigate, Route, Routes, useLocation} from "react-router-dom";
+import {Analytics} from "@vercel/analytics/react";
+import {SpeedInsights} from "@vercel/speed-insights/react";
 import Header from "./components/header/Header";
 import Home from "./components/pages/Home";
 import Skills from "./components/pages/Skills";
 import Contact from "./components/pages/Contact";
 import Socials from "./components/socials/Socials";
-import {reduxState} from "./lib/type";
-import {useEffect, useRef} from "react";
-import {setIsMobile} from "./redux/isMobileSlice";
 import Tooltip from "./components/ui/Tooltip";
-import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Projects from "./components/pages/Projects";
 import About from "./components/pages/About";
-import {ToastContainer} from "react-toastify";
-import {useTranslation} from "react-i18next";
+import {setIsMobile} from "./redux/isMobileSlice";
+import {reduxState} from "./lib/type";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -76,6 +78,8 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }

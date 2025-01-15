@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import {Provider} from "react-redux";
 import {I18nextProvider} from "react-i18next";
 import i18n from "i18next";
+import {BrowserRouter} from "react-router-dom";
 import App from "./App.tsx";
 import store from "./redux/store.ts";
 import "./index.css";
@@ -11,8 +12,6 @@ import faTranslations from "@/features/faTranslations.json";
 import itTranslations from "@/features/itTranslations.json";
 import spTranslations from "@/features/spTranslations.json";
 import arTranslations from "@/features/arTranslations.json";
-
-import {BrowserRouter} from "react-router-dom";
 
 i18n.init({
   lng: "en", // default language
