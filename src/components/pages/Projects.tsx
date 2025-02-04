@@ -8,6 +8,7 @@ import housingGif from "@/assets/gifs/housingCorporation.gif";
 import acv6Gif from "@/assets/gifs/accessControl.gif";
 import studentGif from "@/assets/gifs/studentJob.gif";
 import dinningGif from "@/assets/gifs/viunaDinning.gif";
+import weatherGif from "@/assets/gifs/weather.gif";
 
 const projectsList = [
   {
@@ -71,8 +72,14 @@ const projectsList = [
   {
     title: "Restaurant Menu",
     text: "restaurant",
-    stack: ["HTML", "CSS", "JavaScript"],
+    stack: ["React", "React Router", "TypeScript", "CSS"],
     image: restaurantGif,
+  },
+  {
+    title: "Weather Insight",
+    text: "weather",
+    stack: ["React", "TailwindCSS", "TypeScript", "CSS"],
+    image: weatherGif,
   },
   {
     title: "Alibaba Clone",

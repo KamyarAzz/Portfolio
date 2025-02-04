@@ -54,6 +54,7 @@
   "housing": "Construí un sitio web para una empresa cooperativa de viviendas, con secciones de noticias, galería y un potente panel de administración para una gestión eficiente de los datos.",
   "stock": "Diseñé y desarrollé un sistema de gestión de acciones con autenticación de usuario.",
   "nft": "Sitio web de mercado NFT.",
-  "restaurant": "Diseñé y creé un sitio web para un restaurante con un sistema de reservas.",
+  "weather": "Una aplicación meteorológica moderna construida con React. Proporciona a los usuarios datos meteorológicos en tiempo real, pronósticos y análisis para cualquier ubicación en todo el mundo.",
+  "restaurant": "Un sitio web de menú de restaurante responsivo que presenta un diseño elegante y una interfaz fácil de usar, permitiendo a los visitantes explorar el menú, conocer el restaurante y hacer reservas.",
   "alibaba": "Clon de la página web de Alibaba Airways."
 }

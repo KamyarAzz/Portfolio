@@ -54,6 +54,7 @@
   "housing": "Built a website for a housing cooperative company, featuring news, gallery sections, and a powerful admin panel for efficient data management.",
   "stock": "Designed and developed a Stock Management system with user authentication.",
   "nft": "NFT Marketplace website.",
-  "restaurant": "Designed and created A restaurant website with a reservation system.",
+  "restaurant": "A responsive restaurant menu website that features an elegant design and user-friendly interface, allowing visitors to explore the menu, learn about the restaurant, and make reservations.",
+  "weather": "A modern weather application built with React. It provides users with real-time weather data, forecasts, and insights for any location around the globe.",
   "alibaba": "Alibaba airways website clone."
 }
