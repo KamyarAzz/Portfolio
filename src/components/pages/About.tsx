@@ -2,6 +2,7 @@ import {useTranslation} from "react-i18next";
 import AboutItem from "@/components/ui/containers/AboutItem";
 import Seperator from "@/components/ui/Seperator";
 import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
+import ieltsPDF from "@/assets/pdf/IELTS.pdf";
 import uniLogo from "@/assets/images/Azad-University-Logo.svg";
 import smpLogo from "@/assets/images/smpLogo.svg";
 import mftLogo from "@/assets/images/cropped-logo-dark.png";
@@ -10,7 +11,7 @@ import certificateWebDesign1 from "@/assets/images/certificates/mft/certificate-
 import certificateWebDesign2 from "@/assets/images/certificates/mft/certificate-en2.jpg";
 import certificateWebDesign3 from "@/assets/images/certificates/mft/certificate-en3.jpg";
 import certificatePython from "@/assets/images/certificates/mft/certificate-en.jpeg";
-// import ieltsLogo from "@/assets/images/IELTS-logo.png";
+import ieltsLogo from "@/assets/images/IELTS-logo.png";
 
 export default function About() {
   const {t} = useTranslation();
@@ -48,13 +49,13 @@ export default function About() {
       <BlurFade delay={0.4}>
         <Seperator>{t("certificates")}</Seperator>
         <div className="flex flex-col gap-6 w-full">
-          {/* <AboutItem
-            href="link to file or website"
+          <AboutItem
+            href={ieltsPDF}
             src={ieltsLogo}
             duration="2025"
-            upperText="IELTS"
-            lowerText="Band Score: 7.5"
-          /> */}
+            upperText="Academic IELTS"
+            lowerText="Band Score: 8"
+          />
           <AboutItem
             href="https://cs50.harvard.edu/certificates/f7428f28-6c90-4333-b907-cc1d22ac4cbc"
             src={harvardLogo}
