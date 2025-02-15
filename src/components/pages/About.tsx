@@ -53,7 +53,7 @@ export default function About() {
             href={ieltsPDF}
             src={ieltsLogo}
             duration="2025"
-            upperText="Academic IELTS"
+            upperText="IELTS Academic"
             lowerText="Band Score: 8"
           />
           <AboutItem
