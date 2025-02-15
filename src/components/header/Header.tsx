@@ -191,7 +191,7 @@ export default function Header() {
       </Link>
       <nav
         className={clsx(
-          "md:flex flex-grow justify-center items-end gap-5 hidden text-lg list-none",
+          "hidden md:flex flex-grow justify-center items-end gap-5 text-lg list-none",
           i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
         )}
       >
@@ -298,7 +298,7 @@ export default function Header() {
           {theme === "light" ? (
             <svg
               onClick={setDarkMode}
-              className="transition-transform duration-100 cursor-pointer hover:-rotate-12"
+              className="hover:-rotate-12 transition-transform duration-100 cursor-pointer"
               onMouseEnter={() => addHover("first")}
               onMouseLeave={removeHover}
               fill={isHovering.firstSVG ? "#b91c1c" : "black"}
@@ -310,7 +310,7 @@ export default function Header() {
           ) : (
             <svg
               onClick={setLightMode}
-              className="transition-transform duration-100 cursor-pointer hover:-rotate-12"
+              className="hover:-rotate-12 transition-transform duration-100 cursor-pointer"
               onMouseEnter={() => addHover("first")}
               onMouseLeave={removeHover}
               fill={isHovering.firstSVG ? "#b91c1c" : "white"}
@@ -328,7 +328,7 @@ export default function Header() {
         >
           <svg
             onClick={switchCV}
-            className="z-50 min-h-6 transition-transform duration-100 hover:-rotate-12"
+            className="z-50 min-h-6 hover:-rotate-12 transition-transform duration-100"
             onMouseEnter={() => addHover("third")}
             onMouseLeave={removeHover}
             fill={
