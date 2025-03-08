@@ -7,7 +7,7 @@ import {BorderBeam} from "../animations/container_animations/border-beam";
 import {reduxState} from "@/lib/type";
 
 type Props = {
-  image?: any;
+  image?: string;
   title: string;
   url?: string;
   stack?: string[];
@@ -32,7 +32,7 @@ export default function ProjectLayout({title, image, stack, text}: Props) {
         alt={title}
       />
       <div className="flex flex-col gap-6 px-2.5 py-3 h-full">
-        <h4 className="pt-2 pb-1 text-center text-xl md:text-2xl">{title}</h4>
+        <h4 className="pt-2 pb-1 text-xl md:text-2xl text-center">{title}</h4>
         <div className="flex flex-col justify-between gap-6 h-full">
           <p
             className={clsx(
@@ -42,11 +42,11 @@ export default function ProjectLayout({title, image, stack, text}: Props) {
           >
             {t(`${text}`)}
           </p>
-          <div className="flex flex-wrap items-end gap-2 h-min text-gray-600 text-sm dark:text-gray-300">
+          <div className="flex flex-wrap items-end gap-2 h-min text-gray-600 dark:text-gray-300 text-sm">
             {stack?.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center border-[1px] bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:hover:bg-[#161616] dark:bg-[#262626] px-1 py-0.5 border-transparent rounded-md text-black text-xs dark:text-white duration-200"
+                className="flex items-center bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:hover:bg-[#161616] dark:bg-[#262626] px-1 py-0.5 border-[1px] border-transparent rounded-md text-black dark:text-white text-xs duration-200"
               >
                 {item}
               </div>

@@ -144,33 +144,32 @@ export default function Header() {
     dispatch(setTooltip({isVisible: false, text: ""}));
   };
 
+  function handleCVClickOutside(event: MouseEvent) {
+    if (cvRef.current && !cvRef.current.contains(event.target as Node)) {
+      setOpenCV(false);
+    }
+  }
+
   useEffect(() => {
     if (openCV) {
-      function handleClickOutside(event: MouseEvent) {
-        if (cvRef.current && !cvRef.current.contains(event.target as Node)) {
-          setOpenCV(false);
-        }
-      }
-      document.addEventListener("click", handleClickOutside);
+      document.addEventListener("click", handleCVClickOutside);
       return () => {
-        document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener("click", handleCVClickOutside);
       };
     }
   }, [openCV]);
 
+  function handleLangClickOutside(event: MouseEvent) {
+    if (langRef.current && !langRef.current.contains(event.target as Node)) {
+      setOpenLang(false);
+    }
+  }
+
   useEffect(() => {
     if (openLang) {
-      function handleClickOutside(event: MouseEvent) {
-        if (
-          langRef.current &&
-          !langRef.current.contains(event.target as Node)
-        ) {
-          setOpenLang(false);
-        }
-      }
-      document.addEventListener("click", handleClickOutside);
+      document.addEventListener("click", handleLangClickOutside);
       return () => {
-        document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener("click", handleLangClickOutside);
       };
     }
   }, [openLang]);

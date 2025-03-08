@@ -4,7 +4,7 @@ const Tooltip = ({text}: {text: string}) => {
   const [position, setPosition] = useState({x: 0, y: 0});
 
   useEffect(() => {
-    const handleMouseMove = (event: any) => {
+    const handleMouseMove = (event: MouseEvent) => {
       setPosition({
         x: event.pageX,
         y: event.pageY,
@@ -30,7 +30,7 @@ const Tooltip = ({text}: {text: string}) => {
 
   return (
     <div
-      className="z-[99] border-[1px] p-2 border-red-700 rounded-md text-white"
+      className="z-[99] p-2 border-[1px] border-red-700 rounded-md text-white"
       style={followerStyle}
     >
       {text}

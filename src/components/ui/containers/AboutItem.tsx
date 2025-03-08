@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {reduxState} from "@/lib/type";
 
 type Props = {
-  src: any;
+  src: string;
   duration: string;
   upperText: string;
   lowerText: string;
@@ -25,22 +25,22 @@ export default function AboutItem({
     <a href={href} target="_blank">
       <div
         className={clsx(
-          "flex flex-row items-center justify-between gap-4 text-sm cursor-pointer group md:text-base",
+          "group flex flex-row justify-between items-center gap-4 text-sm md:text-base cursor-pointer",
           i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr"
         )}
       >
         <div className="flex gap-2">
-          <div className="flex bg-white p-1 items-center justify-center duration-300 group-hover:border-red-600 object-cover w-12 h-12 min-h-12 min-w-12 overflow-hidden border-[1px] rounded-full border-[#1f1f1f]">
+          <div className="flex justify-center items-center bg-white p-1 border-[#1f1f1f] border-[1px] group-hover:border-red-600 rounded-full w-12 min-w-12 h-12 min-h-12 object-cover overflow-hidden duration-300">
             <img src={src} className="w-full h-full" />
           </div>
           <div className="flex flex-col gap-0.5">
             <div className="flex items-center gap-1.5">
-              <p className="text-base text-black dark:text-white">
+              <p className="text-black dark:text-white text-base">
                 {upperText}
               </p>
               <div
                 className={clsx(
-                  "flex items-end h-full pb-0.5",
+                  "flex items-end pb-0.5 h-full",
                   i18n.dir(i18n.language) === "rtl" ? "rotate-180" : ""
                 )}
               >
@@ -54,13 +54,13 @@ export default function AboutItem({
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="transition-all duration-300 ease-out transform rotate-0 translate-x-0 opacity-0 lucide lucide-chevron-right size-4 group-hover:translate-x-1 group-hover:opacity-100"
+                  className="lucide-chevron-right opacity-0 group-hover:opacity-100 size-4 rotate-0 transition-all translate-x-0 group-hover:translate-x-1 duration-300 ease-out transform lucide"
                 >
                   <path d="m9 18 6-6-6-6"></path>
                 </svg>
               </div>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               {lowerText}
             </p>
           </div>

@@ -20,7 +20,7 @@ export default function ContactForm() {
     reset,
   } = useForm();
 
-  const form = useRef<any>();
+  const form = useRef<HTMLFormElement>(null);
   const theme = useSelector((state: reduxState) => state.theme);
 
   const handleConfetti = () => {
@@ -44,27 +44,29 @@ export default function ContactForm() {
   };
 
   const onSubmit = () => {
-    setIsSubmitting(true);
-    emailjs
-      .sendForm("service_jfdleh4", "template_al39thv", form.current, {
-        publicKey: "2x0odKI83LDAngx5S",
-      })
-      .then(
-        () => {
-          handleConfetti();
-          reset();
-          toast.success(t("messageSent"), {
-            theme: "dark",
-          });
-          setIsSubmitting(false);
-        },
-        () => {
-          toast.error(t("error"), {
-            theme: "dark",
-          });
-          setIsSubmitting(false);
-        }
-      );
+    if (form.current) {
+      setIsSubmitting(true);
+      emailjs
+        .sendForm("service_jfdleh4", "template_al39thv", form.current, {
+          publicKey: "2x0odKI83LDAngx5S",
+        })
+        .then(
+          () => {
+            handleConfetti();
+            reset();
+            toast.success(t("messageSent"), {
+              theme: "dark",
+            });
+            setIsSubmitting(false);
+          },
+          () => {
+            toast.error(t("error"), {
+              theme: "dark",
+            });
+            setIsSubmitting(false);
+          }
+        );
+    }
   };
 
   useEffect(() => {
@@ -76,7 +78,7 @@ export default function ContactForm() {
       ref={form}
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        "flex flex-col items-center gap-5 bg-[#fdfdfd] dark:bg-[#303030] p-6 md:p-8 rounded-md text-black md:text-lg dark:text-white",
+        "flex flex-col items-center gap-5 bg-[#fdfdfd] dark:bg-[#303030] p-6 md:p-8 rounded-md text-black dark:text-white md:text-lg",
         i18n.dir(i18n.language) === "ltr" ? "ltr" : "rtl"
       )}
       style={{
@@ -85,11 +87,11 @@ export default function ContactForm() {
     >
       {i18n.dir(i18n.language) === "ltr" ? (
         <GradualSpacing
-          className="font-bold font-display text-4xl text-center md:text-4xl"
+          className="font-display font-bold text-4xl md:text-4xl text-center"
           text={t("formTitle")}
         />
       ) : (
-        <h1 className="font-bold font-display text-4xl text-center md:text-4xl">
+        <h1 className="font-display font-bold text-4xl md:text-4xl text-center">
           {t("formTitle")}
         </h1>
       )}
@@ -150,7 +152,7 @@ export default function ContactForm() {
         >
           <label htmlFor="description">{t("formDesc")}:</label>
           <textarea
-            className="bg-transparent w-full h-36 text-start overflow-y-auto focus:outline-none resize-none"
+            className="bg-transparent focus:outline-none w-full h-36 overflow-y-auto text-start resize-none"
             {...register("description", {
               required: t("error3"),
             })}
@@ -166,7 +168,7 @@ export default function ContactForm() {
       </div>
       <input
         disabled={isSubmitting}
-        className="border-2 disabled:!border-gray-500 bg-transparent hover:dark:bg-red-900 disabled:!bg-transparent dark:bg-red-700 px-7 py-1.5 dark:border-transparent border-red-700 hover:border-red-900 rounded-md w-min text-red-700 hover:text-red-900 disabled:!text-gray-500 dark:text-white duration-200 cursor-pointer disabled:!cursor-default"
+        className="bg-transparent hover:dark:bg-red-900 disabled:!bg-transparent dark:bg-red-700 px-7 py-1.5 border-2 disabled:!border-gray-500 dark:border-transparent border-red-700 hover:border-red-900 rounded-md w-min text-red-700 hover:text-red-900 disabled:!text-gray-500 dark:text-white duration-200 cursor-pointer disabled:!cursor-default"
         type="submit"
         value={t("send")}
         id="submit"
