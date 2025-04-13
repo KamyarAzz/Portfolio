@@ -13,12 +13,9 @@ export default function SkillsAnimation() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-min ltr">
-      <div className="relative z-20 flex w-full h-20 overflow-hidden">
-        <div
-          className="left-0 z-50 absolute justify-self-start bg-red-700 rounded-full w-[2px] h-full"
-          style={{boxShadow: "0px 0px 22px 5px #b91c1c"}}
-        ></div>
+    <div className="flex flex-col justify-center items-center w-full h-max ltr">
+      <div className="z-20 relative flex w-full h-10 md:h-20 overflow-hidden">
+        <div className="left-0 z-50 absolute justify-self-start bg-red-700 shadow-right-portal rounded-full w-0.5 h-full"></div>
         <div className="relative flex justify-end items-center bg-transparent py-1 w-full h-full overflow-hidden">
           <div
             id="first"
@@ -382,10 +379,7 @@ export default function SkillsAnimation() {
             </svg>
           </div>
         </div>
-        <div
-          className="right-0 z-50 absolute justify-self-end bg-red-700 rounded-full w-[2px] h-full"
-          style={{boxShadow: "0px 0px 22px 5px #b91c1c"}}
-        ></div>
+        <div className="right-0 z-50 absolute justify-self-end bg-red-700 shadow-left-portal rounded-full w-0.5 h-full"></div>
       </div>
     </div>
   );

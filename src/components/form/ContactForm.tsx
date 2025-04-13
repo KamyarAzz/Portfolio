@@ -5,9 +5,7 @@ import {toast} from "react-toastify";
 import confetti from "canvas-confetti";
 import clsx from "clsx";
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
 import GradualSpacing from "@/components/ui/animations/text_animations/gradual-spacing";
-import {reduxState} from "@/lib/type";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -21,7 +19,6 @@ export default function ContactForm() {
   } = useForm();
 
   const form = useRef<HTMLFormElement>(null);
-  const theme = useSelector((state: reduxState) => state.theme);
 
   const handleConfetti = () => {
     const duration = 2000;
@@ -78,12 +75,9 @@ export default function ContactForm() {
       ref={form}
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        "flex flex-col items-center gap-5 bg-[#fdfdfd] dark:bg-[#303030] p-6 md:p-8 rounded-md text-black dark:text-white md:text-lg",
+        "flex flex-col items-center gap-5 bg-softGray dark:bg-darkCharcoal shadow-nav-light dark:shadow-nav-dark p-6 md:p-8 rounded-md text-black dark:text-white md:text-lg",
         i18n.dir(i18n.language) === "ltr" ? "ltr" : "rtl"
       )}
-      style={{
-        boxShadow: `0px 2px 8px ${theme === "dark" ? "#1e1e1e" : "#ddd"}`,
-      }}
     >
       {i18n.dir(i18n.language) === "ltr" ? (
         <GradualSpacing
@@ -97,14 +91,7 @@ export default function ContactForm() {
       )}
       <div className="flex flex-wrap gap-6">
         <div className="flex flex-col flex-grow">
-          <div
-            className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
-            style={{
-              boxShadow: `0px 0px 3px ${
-                theme === "dark" ? "black" : "#999"
-              } inset`,
-            }}
-          >
+          <div className="flex justify-between gap-4 bg-white dark:bg-darkBg shadow-input-light dark:shadow-input-dark px-4 py-2 md:py-1 rounded-md w-full">
             <label htmlFor="name">{t("formName")}: </label>
             <input
               {...register("name", {required: t("error1")})}
@@ -119,14 +106,7 @@ export default function ContactForm() {
           }`}</p>
         </div>
         <div className="flex flex-col flex-grow">
-          <div
-            className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
-            style={{
-              boxShadow: `0px 0px 3px ${
-                theme === "dark" ? "black" : "#999"
-              } inset`,
-            }}
-          >
+          <div className="flex justify-between gap-4 bg-white dark:bg-darkBg shadow-input-light dark:shadow-input-dark px-4 py-2 md:py-1 rounded-md w-full">
             <label htmlFor="email">{t("formEmail")}:</label>
             <input
               {...register("email", {required: t("error2")})}
@@ -142,14 +122,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div
-          className="flex justify-between gap-4 bg-white dark:bg-darkBg px-4 py-2 md:py-1 rounded-md w-full"
-          style={{
-            boxShadow: `0px 0px 3px ${
-              theme === "dark" ? "black" : "#999"
-            } inset`,
-          }}
-        >
+        <div className="flex justify-between gap-4 bg-white dark:bg-darkBg shadow-input-light dark:shadow-input-dark px-4 py-2 md:py-1 rounded-md w-full">
           <label htmlFor="description">{t("formDesc")}:</label>
           <textarea
             className="bg-transparent focus:outline-none w-full h-36 overflow-y-auto text-start resize-none"

@@ -1,6 +1,5 @@
 #first {
   animation: first 15s linear 0.10s infinite;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 @keyframes first {

@@ -30,7 +30,7 @@ export default function AboutItem({
         )}
       >
         <div className="flex gap-2">
-          <div className="flex justify-center items-center bg-white p-1 border-[#1f1f1f] border-[1px] group-hover:border-red-600 rounded-full w-12 min-w-12 h-12 min-h-12 object-cover overflow-hidden duration-300">
+          <div className="flex justify-center items-center bg-white p-1 border border-darkGray group-hover:border-red-600 rounded-full w-12 min-w-12 h-12 min-h-12 object-cover overflow-hidden duration-300">
             <img src={src} className="w-full h-full" />
           </div>
           <div className="flex flex-col gap-0.5">

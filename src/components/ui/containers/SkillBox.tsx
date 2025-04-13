@@ -11,7 +11,7 @@ export default function SkillBox({children, className}: Props) {
     <div
       className={clsx(
         className,
-        "px-3 md:px-4 md:py-2.5 py-1.5 text-black hover:text-white !rounded-md border-[1px] duration-300 dark:text-white",
+        "px-3 md:px-4 md:py-2.5 py-1.5 text-black hover:text-white !rounded-md border duration-300 dark:text-white",
         i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr"
       )}
     >

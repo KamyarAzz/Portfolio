@@ -46,7 +46,7 @@ export default function ProjectLayout({title, image, stack, text}: Props) {
             {stack?.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:hover:bg-[#161616] dark:bg-[#262626] px-1 py-0.5 border-[1px] border-transparent rounded-md text-black dark:text-white text-xs duration-200"
+                className="flex items-center bg-[#D9D9D9] hover:bg-[#b9b9b9] dark:bg-[#262626] dark:hover:bg-[#161616] px-1 py-0.5 border- border-transparent rounded-md text-black dark:text-white text-xs duration-200"
               >
                 {item}
               </div>

@@ -11,12 +11,9 @@ export default function Footer() {
   return (
     <footer
       className={clsx(
-        "bottom-0 sticky flex justify-between md:hidden bg-[#FEFAF6] dark:bg-darkBg px-4 py-1.5 w-full text-black text-xs dark:text-white",
+        "md:hidden bottom-0 sticky flex justify-between bg-lightPeachBg dark:bg-darkBg shadow-nav-light dark:shadow-nav-dark px-4 py-1.5 w-full text-black dark:text-white text-xs",
         i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
       )}
-      style={{
-        boxShadow: `0px 2px 8px ${theme === "dark" ? "#1e1e1e" : "#ddd"}`,
-      }}
     >
       <Link
         to="/home"
@@ -38,8 +35,8 @@ export default function Footer() {
         </svg>
         <p
           className={clsx(
-            "text-center text-xs",
-            location.pathname !== "/home" && "text-[#808080]"
+            "text-xs text-center",
+            location.pathname !== "/home" && "text-lightGray"
           )}
         >
           {t("home")}
@@ -65,8 +62,8 @@ export default function Footer() {
         </svg>
         <p
           className={clsx(
-            "text-center text-xs",
-            location.pathname !== "/about" && "text-[#808080]"
+            "text-xs text-center",
+            location.pathname !== "/about" && "text-lightGray"
           )}
         >
           {t("menu1")}
@@ -92,8 +89,8 @@ export default function Footer() {
         </svg>
         <p
           className={clsx(
-            "text-center text-xs",
-            location.pathname !== "/skills" && "text-[#808080]"
+            "text-xs text-center",
+            location.pathname !== "/skills" && "text-lightGray"
           )}
         >
           {t("menu2")}
@@ -119,8 +116,8 @@ export default function Footer() {
         </svg>
         <p
           className={clsx(
-            "text-center text-xs",
-            location.pathname !== "/projects" && "text-[#808080]"
+            "text-xs text-center",
+            location.pathname !== "/projects" && "text-lightGray"
           )}
         >
           {t("projects")}
@@ -146,8 +143,8 @@ export default function Footer() {
         </svg>
         <p
           className={clsx(
-            "text-center text-xs",
-            location.pathname !== "/contact" && "text-[#808080]"
+            "text-xs text-center",
+            location.pathname !== "/contact" && "text-lightGray"
           )}
         >
           {t("menu3")}
