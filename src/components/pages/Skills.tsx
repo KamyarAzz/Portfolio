@@ -10,7 +10,7 @@ export default function Skills() {
   const {t, i18n} = useTranslation();
   return (
     <BlurFade className="flex flex-col items-center gap-5 md:gap-0 w-full h-max">
-      <div className="justify-center items-center w-full">
+      <div className="hidden md:flex justify-center items-center w-full">
         <ScrollAnimation />
       </div>
       <div className="flex flex-col justify-center items-center w-full">
