@@ -14,6 +14,8 @@ import Tooltip from "./components/ui/Tooltip";
 import Footer from "./components/footer/Footer";
 import Projects from "./components/pages/Projects";
 import About from "./components/pages/About";
+import Blog from "./components/pages/Blog";
+import BlogPost from "./components/pages/BlogPost";
 import {setIsMobile} from "./redux/isMobileSlice";
 import {reduxState} from "./lib/type";
 import "react-toastify/dist/ReactToastify.css";
@@ -74,6 +76,9 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </div>
