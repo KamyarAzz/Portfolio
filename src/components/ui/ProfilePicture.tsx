@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import clsx from "clsx";
 import {reduxState} from "@/lib/type";
-import styles from "@/css/animationDog.module.css";
+import styles from "@/css/animationDot.module.css";
 import profilePic from "@/assets/images/profilePic.jpg";
 
 export default function ProfilePicture() {

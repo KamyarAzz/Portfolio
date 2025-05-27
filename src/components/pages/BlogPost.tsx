@@ -4,7 +4,7 @@ import Loader from "../ui/Loader";
 
 type Post = {
   content: string;
-  created_at: Date;
+  created_at: string;
   description: string;
   id: number;
   likes: number;
@@ -26,7 +26,6 @@ export default function BlogPost() {
         const response = await fetch(baseUrl + `/api/posts/${id}`);
         if (response.ok) {
           const serverResponse = await response.json();
-          console.log(serverResponse);
           setPost(serverResponse);
         }
       } catch (err) {
@@ -43,7 +42,9 @@ export default function BlogPost() {
   return loading ? (
     <Loader />
   ) : error ? (
-    <h1 className="text-red-600">An error occurred please try again later.</h1>
+    <h1 className="w-full mt-5 text-lg text-center text-red-600 md:mt-8">
+      An error occurred please try again later.
+    </h1>
   ) : (
     post && <div>{post.title}</div>
   );
