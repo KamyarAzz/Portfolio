@@ -58,11 +58,11 @@ export default function Blog() {
   return (
     <div className="flex flex-col w-full h-full min-h-full overflow-y-hidden md:flex-row-reverse md:justify-center md:gap-16 lg:gap-24">
       {error ? (
-        <h1 className="w-full mt-5 text-lg text-center text-red-600 md:mt-8">
+        <h1 className="w-full mt-5 text-center text-red-600 md:text-lg md:mt-8">
           An error occurred please try again later.
         </h1>
       ) : (
-        <div className="flex flex-col w-full gap-4 mt-4 md:mt-10 max-w-[700px]">
+        <div className="flex flex-col w-full gap-4 md:mt-10 max-w-[700px]">
           <div className="flex items-center justify-between w-full gap-4">
             <input
               value={searchString}
@@ -76,7 +76,7 @@ export default function Blog() {
           {loading ? (
             <Loader />
           ) : posts.length === 0 ? (
-            <h1 className="mt-20 text-lg text-center dark:text-white">
+            <h1 className="mt-5 text-center md:mt-8 md:text-lg dark:text-white">
               No posts available at the moment.
             </h1>
           ) : (
