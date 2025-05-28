@@ -7,7 +7,6 @@ type Props = {
 };
 
 export default function LikeButton({likes}: Props) {
-  console.log(likes);
   const {id} = useParams<{id: string}>();
 
   const calculateHasLiked = () => {
