@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 import Loader from "@/components/ui/Loader";
 import CommentForm from "@/components/form/CommentForm";
 import LikeButton from "@/components/devlog/LikeButton";
@@ -12,7 +13,7 @@ type Props = {
 export default function Comments({likes}: Props) {
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const {id} = useParams<{id: string}>();
-
+  const {t} = useTranslation();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [comments, setComments] = useState<TComment[]>([]);
@@ -42,7 +43,7 @@ export default function Comments({likes}: Props) {
     <div className="flex flex-col w-full gap-4 pb-4 md:mt-4 md:pb-10">
       <div className="flex items-center justify-between w-full">
         <div className="flex gap-2.5">
-          <h1 className="text-lg">Comments</h1>
+          <h1 className="text-lg">{t("Comments")}</h1>
           {comments.length > 0 && (
             <p className="flex items-center justify-center w-6 h-6 text-sm text-white rounded-full bg-mainRed">
               {comments.length}

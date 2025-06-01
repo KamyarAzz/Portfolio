@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useParams} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 import {cn} from "@/lib/utils";
 
 type Props = {
@@ -8,6 +9,7 @@ type Props = {
 
 export default function LikeButton({likes}: Props) {
   const {id} = useParams<{id: string}>();
+  const {t} = useTranslation();
 
   const calculateHasLiked = () => {
     const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
@@ -48,7 +50,7 @@ export default function LikeButton({likes}: Props) {
   };
 
   return (
-    <div className="flex gap-2.5 items-center">
+    <div title={t("Like")} className="flex gap-2.5 items-center">
       <svg
         onClick={handleLike}
         className={cn(
