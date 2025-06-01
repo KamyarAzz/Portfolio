@@ -1,13 +1,15 @@
 import React from "react";
-
-type Sort = "desc" | "asc" | null;
+import {useTranslation} from "react-i18next";
+import {TSort} from "@/lib/type";
 
 type Props = {
-  sort: Sort;
+  sort: TSort;
   setSort: React.Dispatch<React.SetStateAction<"desc" | "asc" | null>>;
 };
 
 export default function SortButton({setSort, sort}: Props) {
+  const {t} = useTranslation();
+
   const handleSortChange = () => {
     if (sort === null) setSort("asc");
     else if (sort === "asc") setSort("desc");
@@ -15,10 +17,11 @@ export default function SortButton({setSort, sort}: Props) {
   };
   return (
     <div
+      title={t("Sort")}
       onClick={handleSortChange}
-      className="flex items-center gap-1 cursor-pointer fill-gray-400 hover:fill-gray-600 hover:dark:fill-gray-200"
+      className="flex items-center gap-1 cursor-pointer hover:fill-gray-600 hover:dark:fill-gray-200 fill-gray-400 "
     >
-      {sort === "asc" ? (
+      {sort === "desc" ? (
         <svg
           className="h-4"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +30,7 @@ export default function SortButton({setSort, sort}: Props) {
           <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
         </svg>
       ) : (
-        sort === "desc" && (
+        sort === "asc" && (
           <svg
             className="h-4 rotate-180"
             xmlns="http://www.w3.org/2000/svg"

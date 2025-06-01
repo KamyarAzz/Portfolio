@@ -32,7 +32,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
     outlineColour: "#0000",
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
+    dragControl: true,
   },
 };
 
@@ -51,19 +51,18 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e) => e.preventDefault(),
     },
   });
 };
 
 export type DynamicCloudProps = {
   iconSlugs: string[];
-  theme: "light" | "dark";
 };
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-export default function IconCloud({iconSlugs, theme}: DynamicCloudProps) {
+export default function IconCloud({iconSlugs}: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
 
   useEffect(() => {
@@ -74,12 +73,12 @@ export default function IconCloud({iconSlugs, theme}: DynamicCloudProps) {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light")
+      renderCustomIcon(icon, "light")
     );
-  }, [data, theme]);
+  }, [data]);
 
   return (
-    // @ts-ignore
+    // @ts-expect-error type error
     <Cloud {...cloudProps}>
       <>{renderedIcons}</>
     </Cloud>

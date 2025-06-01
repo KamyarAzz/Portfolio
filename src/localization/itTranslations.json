@@ -56,5 +56,16 @@
   "nft": "Sito web del mercato NFT.",
   "weather": "Un'applicazione meteorologica moderna costruita con React. Fornisce agli utenti dati meteorologici in tempo reale, previsioni e approfondimenti per qualsiasi posizione in tutto il mondo.",
   "restaurant": "Un sito web di menu per ristoranti reattivo che presenta un design elegante e un'interfaccia user-friendly, consentendo ai visitatori di esplorare il menu, conoscere il ristorante e fare prenotazioni.",
-  "alibaba": "Clone del sito web di Alibaba Airways."
+  "alibaba": "Clone del sito web di Alibaba Airways.",
+  "Devlog": "Devlog",
+  "Search": "Cerca",
+  "devlogError": "Si è verificato un errore, riprova più tardi.",
+  "emptyArray": "Nessun post disponibile al momento.",
+  "Sort": "Ordina",
+  "Return": "Torna",
+  "Comments": "Commenti",
+  "Comment": "Invia commento",
+  "Leave a comment": "Lascia un commento",
+  "Message": "Messaggio",
+  "Like": "Metti mi piace"
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import {useRef} from "react";
 import {
   AnimatePresence,
   motion,
@@ -15,8 +15,8 @@ interface BlurFadeProps {
   children: React.ReactNode;
   className?: string;
   variant?: {
-    hidden: { y: number };
-    visible: { y: number };
+    hidden: {y: number};
+    visible: {y: number};
   };
   duration?: number;
   delay?: number;
@@ -24,6 +24,7 @@ interface BlurFadeProps {
   inView?: boolean;
   inViewMargin?: MarginType;
   blur?: string;
+  style?: React.CSSProperties;
 }
 
 export default function BlurFade({
@@ -36,13 +37,14 @@ export default function BlurFade({
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
+  style = {},
 }: BlurFadeProps) {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+  const inViewResult = useInView(ref, {once: true, margin: inViewMargin});
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+    hidden: {y: yOffset, opacity: 0, filter: `blur(${blur})`},
+    visible: {y: -yOffset, opacity: 1, filter: `blur(0px)`},
   };
   const combinedVariants = variant || defaultVariants;
   return (
@@ -59,6 +61,7 @@ export default function BlurFade({
           ease: "easeOut",
         }}
         className={className}
+        style={style}
       >
         {children}
       </motion.div>

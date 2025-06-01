@@ -1,25 +1,21 @@
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import Loader from "../ui/Loader";
-import Comments from "../blog/Comments";
+import {useTranslation} from "react-i18next";
+import Loader from "@/components/ui/Loader";
+import Comments from "@/components/devlog/Comments";
+import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
+import "react-quill/dist/quill.snow.css";
+import {TPost} from "@/lib/type";
 
-type Post = {
-  content: string;
-  created_at: string;
-  description: string;
-  id: number;
-  likes: number;
-  title: string;
-};
-
-export default function BlogPost() {
+export default function DevlogPost() {
   const {id} = useParams<{id: string}>();
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
-  const [post, setPost] = useState<Post | null>(null);
+  const [post, setPost] = useState<TPost | null>(null);
 
   const navigate = useNavigate();
+  const {t} = useTranslation();
 
   const convertDate = (isoString: string) => {
     const date = new Date(isoString);
@@ -55,12 +51,12 @@ export default function BlogPost() {
   }, [id]);
 
   return (
-    <div className="relative flex flex-col w-full h-full dark:text-white min-h-full overflow-y-hidden gap-8 max-w-[700px] mx-auto">
+    <BlurFade className="relative flex flex-col w-full dark:text-white min-h-full gap-8 max-w-[800px] mx-auto">
       {loading ? (
         <Loader />
       ) : error || !post ? (
         <h1 className="w-full mx-auto mt-5 text-center text-red-600 md:text-lg md:mt-8">
-          An error occurred please try again later.
+          {t("devlogError")}
         </h1>
       ) : (
         <>
@@ -75,19 +71,22 @@ export default function BlogPost() {
             >
               <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
             </svg>
-            <p className="hidden md:flex mt-[2px]">Return</p>
+            <p className="hidden md:flex mt-[2px]">{t("Return")}</p>
           </div>
           <div className="flex items-center w-full h-8 gap-4">
-            <p className="flex items-center h-full px-4 text-white bg-darkGray ">
-              Kamyar Azizi
+            <p className="flex items-center h-full px-4 py-1 text-white bg-darkGray ">
+              {t("name")}
             </p>
             <p>{convertDate(post.created_at)}</p>
           </div>
           <h1 className="text-4xl">{post.title}</h1>
-          <div className="mt-9">{post.content}</div>
+          <div
+            className="w-full h-auto p-0 mt-4 mb-4 overflow-visible ql-editor"
+            dangerouslySetInnerHTML={{__html: post.content}}
+          />
         </>
       )}
-      <Comments likes={post ? post.likes : null} />
-    </div>
+      {!loading && post && <Comments likes={post ? post.likes : null} />}
+    </BlurFade>
   );
 }

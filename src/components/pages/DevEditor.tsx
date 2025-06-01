@@ -1,19 +1,15 @@
 import {useState} from "react";
-import ReactQuill, {Quill} from "react-quill";
-import Button from "../ui/Button";
-import "react-quill/dist/quill.snow.css";
 import {toast} from "react-toastify";
-// @ts-expect-error error
-import ImageResize from "quill-image-resize-module-react";
-import Loader from "../ui/Loader";
+import ReactQuill, {Quill} from "react-quill";
+import Button from "@/components/ui/Button";
+import Loader from "@/components/ui/Loader";
+import "react-quill/dist/quill.snow.css";
 
 type Post = {
   title: string;
   description: string;
   content: string;
 };
-
-Quill.register("modules/imageResize", ImageResize);
 
 const modules = {
   toolbar: [
@@ -30,7 +26,7 @@ const modules = {
   },
 };
 
-function DevPost() {
+function DevEditor() {
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
   const [title, setTitle] = useState<string>("");
@@ -72,21 +68,20 @@ function DevPost() {
   ) : (
     <div className="flex flex-col w-full gap-5 mx-auto">
       <input
-        className="p-1 bg-transparent border-2 border-black dark:border-gray-300"
+        className="p-1 bg-transparent border border-gray-400 dark:border-gray-300 dark:text-white"
         placeholder="title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         type="text"
       />
       <textarea
-        className="p-1 bg-transparent border-2 border-black dark:border-gray-300"
+        className="p-1 text-black bg-transparent border border-gray-400 dark:border-gray-300 dark:text-white"
         placeholder="description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
       <ReactQuill
         modules={modules}
-        className="bg-white"
         theme="snow"
         value={content}
         onChange={setContent}
@@ -98,4 +93,4 @@ function DevPost() {
   );
 }
 
-export default DevPost;
+export default DevEditor;

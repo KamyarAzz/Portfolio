@@ -1,20 +1,12 @@
 import {useEffect, useState} from "react";
-import Loader from "../ui/Loader";
 import {useParams} from "react-router-dom";
-import LikeButton from "./LikeButton";
-import CommentForm from "../form/CommentForm";
+import Loader from "@/components/ui/Loader";
+import CommentForm from "@/components/form/CommentForm";
+import LikeButton from "@/components/devlog/LikeButton";
+import {TComment} from "@/lib/type";
 
 type Props = {
   likes: number | null;
-};
-
-type Comment = {
-  id: number;
-  post_id: number;
-  full_name: string;
-  email: string;
-  message: string;
-  created_at: string;
 };
 
 export default function Comments({likes}: Props) {
@@ -23,7 +15,7 @@ export default function Comments({likes}: Props) {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [comments, setComments] = useState<TComment[]>([]);
 
   const fetchComments = async () => {
     setLoading(true);
@@ -47,7 +39,7 @@ export default function Comments({likes}: Props) {
   }, []);
 
   return (
-    <div className="flex flex-col w-full gap-2">
+    <div className="flex flex-col w-full gap-4 pb-4 md:mt-4 md:pb-10">
       <div className="flex items-center justify-between w-full">
         <div className="flex gap-2.5">
           <h1 className="text-lg">Comments</h1>
@@ -77,15 +69,26 @@ export default function Comments({likes}: Props) {
             comments.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col w-full gap-3 p-3 px-4 text-black border rounded-md bg-softGray dark:text-white dark:bg-darkCharcoal"
+                className="flex w-full gap-4 px-4 py-3 text-black border rounded-md bg-softGray dark:text-white dark:bg-darkCharcoal"
               >
-                <div className="flex justify-between w-full">
-                  <h4 className="text-lg font-bold">{item.full_name}</h4>
-                  <p className="text-sm tracking-widest text-gray-400">
-                    {item.created_at.slice(0, 10).replace(/-/g, "/")}
-                  </p>
+                <div className="overflow-hidden border rounded-full w-9 h-9 min-h-9 min-w-9 border-gray-950 dark:border-gray-400">
+                  <svg
+                    className="w-full h-full mt-1 fill-gray-950 dark:fill-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                  </svg>
                 </div>
-                <p>{item.message}</p>
+                <div className="flex flex-col w-full gap-2.5 pt-1">
+                  <div className="flex items-center justify-between w-full">
+                    <h4 className="text-lg font-bold">{item.full_name}</h4>
+                    <p className="text-sm tracking-widest text-gray-400 whitespace-nowrap">
+                      {item.created_at.slice(0, 10).replace(/-/g, "/")}
+                    </p>
+                  </div>
+                  <p>{item.message}</p>
+                </div>
               </div>
             ))
           ) : (

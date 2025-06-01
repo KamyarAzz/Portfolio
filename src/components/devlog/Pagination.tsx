@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import {cn} from "@/lib/utils";
 
 type Props = {
   setPage: React.Dispatch<React.SetStateAction<number>>;
@@ -14,7 +14,7 @@ export default function Pagination({setPage, page, totalPages}: Props) {
         .map((_, i) => (
           <div
             onClick={() => setPage(i + 1)}
-            className={clsx(
+            className={cn(
               i + 1 === page ? " cursor-default" : " cursor-pointer",
               "flex flex-col items-center justify-center w-10 h-10 bg-white border rounded-md dark:text-white dark:bg-darkCharcoal"
             )}

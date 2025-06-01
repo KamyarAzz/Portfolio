@@ -1,20 +1,14 @@
 import {useNavigate} from "react-router-dom";
+import {TPostPreview} from "@/lib/type";
 
 type Props = {
-  post: {
-    id: number;
-    title: string;
-    description: string;
-    likes: number;
-    created_at: string;
-    comment_count: number;
-  };
+  post: TPostPreview;
 };
 
 export default function PostPreview({post}: Props) {
   const navigate = useNavigate();
   const clickHandler = () => {
-    navigate("/blog/" + post.id);
+    navigate("/devlog/" + post.id);
   };
   return (
     <div

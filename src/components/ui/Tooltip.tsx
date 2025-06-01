@@ -1,6 +1,13 @@
 import {useState, useEffect} from "react";
+import BlurFade from "./animations/container_animations/blur-fade";
 
-const Tooltip = ({text}: {text: string}) => {
+type Props = {
+  text: string;
+  offsetX?: number;
+  offsetY?: number;
+};
+
+const Tooltip = ({text, offsetX = +25, offsetY = -10}: Props) => {
   const [position, setPosition] = useState({x: 0, y: 0});
 
   useEffect(() => {
@@ -19,21 +26,22 @@ const Tooltip = ({text}: {text: string}) => {
   }, []);
 
   const followerStyle: React.CSSProperties = {
-    position: "absolute",
-    top: position.y - 25,
-    left: position.x + 25,
+    position: "fixed",
+    top: position.y + offsetY,
+    left: position.x + offsetX,
     backgroundColor: "rgba(0, 0, 0, 0.9)",
     pointerEvents: "none",
     transform: "translate(-50%, -50%)",
   };
 
   return (
-    <div
+    <BlurFade
+      duration={0.25}
       className="z-[99] p-2 border border-red-700 rounded-md text-white"
       style={followerStyle}
     >
       {text}
-    </div>
+    </BlurFade>
   );
 };
 
