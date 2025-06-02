@@ -9,6 +9,9 @@ import acv6Gif from "@/assets/gifs/accessControl.gif";
 import studentGif from "@/assets/gifs/studentJob.gif";
 import dinningGif from "@/assets/gifs/viunaDinning.gif";
 import weatherGif from "@/assets/gifs/weather.gif";
+import smpGif from "@/assets/gifs/smp.gif";
+import viunaCardGif from "@/assets/gifs/viunaCard.gif";
+import viunaGif from "@/assets/gifs/viuna.gif";
 
 const projectsList = [
   {
@@ -70,6 +73,38 @@ const projectsList = [
     image: nftGif,
   },
   {
+    title: "Viuna Card",
+    text: "acv7",
+    stack: ["Next.js", "Axios", "Tanstack Query", "TailwindCSS", "TypeScript"],
+    image: viunaCardGif,
+  },
+  {
+    title: "Viuna Website",
+    text: "viuna",
+    stack: [
+      "React",
+      "React Router",
+      "React Query",
+      "TailwindCSS",
+      "TypeScript",
+      "CSS",
+    ],
+    image: viunaGif,
+  },
+  {
+    title: "Saman Madar Pars Website",
+    text: "smpProj",
+    stack: [
+      "React",
+      "React Router",
+      "React Query",
+      "TailwindCSS",
+      "TypeScript",
+      "CSS",
+    ],
+    image: smpGif,
+  },
+  {
     title: "Restaurant Menu",
     text: "restaurant",
     stack: ["React", "React Router", "TypeScript", "CSS"],
@@ -91,7 +126,7 @@ const projectsList = [
 
 export default function Projects() {
   return (
-    <div className="justify-stretch items-stretch gap-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full h-max">
+    <div className="grid items-stretch w-full grid-cols-1 gap-10 justify-stretch md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 h-max">
       {projectsList.map((project, index) => (
         <BlurFade key={project.title} delay={+`0.${index}`}>
           <ProjectLayout

@@ -33,7 +33,7 @@ export default function ProjectLayout({title, image, stack, text}: Props) {
         <div className="flex flex-col justify-between h-full gap-6">
           <p
             className={cn(
-              "flex flex-wrap h-max text-base text-wrap",
+              "flex flex-wrap h-max text-base text-wrap text-justify  hyphens-auto max-w-prose",
               i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr"
             )}
           >
