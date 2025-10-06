@@ -4,6 +4,7 @@ import Seperator from "@/components/ui/Seperator";
 import BlurFade from "@/components/ui/animations/container_animations/blur-fade";
 import ieltsPDF from "@/assets/pdf/IELTS.pdf";
 import uniLogo from "@/assets/images/Azad-University-Logo.svg";
+import politoLogo from "@/assets/images/polito.png";
 import smpLogo from "@/assets/images/smpLogo.svg";
 import mftLogo from "@/assets/images/cropped-logo-dark.png";
 import harvardLogo from "@/assets/images/Harvard-Logo.png";
@@ -19,12 +20,12 @@ export default function About() {
     <div className="flex flex-col w-full h-max">
       <BlurFade>
         <Seperator className="!mt-0">{t("education")}</Seperator>
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col w-full gap-6">
           <AboutItem
-            href="https://iau.ir/"
-            src={uniLogo}
-            duration={`2024 - ${t("current")}`}
-            upperText={t("uni")}
+            href="https://www.polito.it/en"
+            src={politoLogo}
+            duration={`2025 - ${t("current")}`}
+            upperText={t("uniPolito")}
             lowerText={t("master")}
           />
           <AboutItem
@@ -48,7 +49,7 @@ export default function About() {
       </BlurFade>
       <BlurFade delay={0.4}>
         <Seperator>{t("certificates")}</Seperator>
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col w-full gap-6">
           <AboutItem
             href={ieltsPDF}
             src={ieltsLogo}
