@@ -1,22 +1,29 @@
-import {useDispatch} from "react-redux";
-import {setTooltip} from "@/redux/tooltipSlice";
+import {useState} from "react";
+import Tooltip from "@/components/ui/Tooltip";
+import {TTooltip} from "@/lib/type";
 
 export default function SkillsAnimation() {
-  const dispatch = useDispatch();
+  const [tooltip, setTooltip] = useState<TTooltip>({
+    isVisible: false,
+    text: "",
+  });
 
   const enterHoverHandler = (text: string) => {
-    dispatch(setTooltip({isVisible: true, text: text}));
+    setTooltip({isVisible: true, text: text});
   };
 
   const exitHoverHandler = () => {
-    dispatch(setTooltip({isVisible: false, text: ""}));
+    setTooltip({isVisible: false, text: ""});
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-max ltr">
-      <div className="z-20 relative flex w-full h-10 md:h-20 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center w-full h-max ltr">
+      {tooltip.isVisible && (
+        <Tooltip offsetX={-105} offsetY={-105} text={tooltip.text} />
+      )}
+      <div className="relative z-20 flex w-full h-10 overflow-hidden md:h-20">
         <div className="left-0 z-50 absolute justify-self-start bg-red-700 shadow-right-portal rounded-full w-0.5 h-full"></div>
-        <div className="relative flex justify-end items-center bg-transparent py-1 w-full h-full overflow-hidden">
+        <div className="relative flex items-center justify-end w-full h-full py-1 overflow-hidden bg-transparent">
           <div
             id="first"
             className="flex flex-row flex-nowrap justify-between items-center gap-4 px-2 md:px-0 w-[200%] min-w-[200%] h-full font-sans select-none"

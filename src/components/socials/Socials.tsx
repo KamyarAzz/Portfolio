@@ -1,6 +1,4 @@
 import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
-import {reduxState} from "@/lib/type";
 
 export default function Socials() {
   const [isHovering, setIsHovering] = useState({
@@ -8,7 +6,6 @@ export default function Socials() {
     secondSVG: false,
     thirdSVG: false,
   });
-  const theme = useSelector((state: reduxState) => state.theme);
 
   useEffect(() => {
     setIsHovering({
@@ -39,17 +36,15 @@ export default function Socials() {
       <a href="https://www.linkedin.com/in/kamyarazz/" target="_blank">
         <div className="cursor-pointer" title="Linkedin">
           <svg
+            className={
+              isHovering.firstSVG
+                ? "fill-mainRed"
+                : "fill-black dark:fill-white"
+            }
             onMouseEnter={() => addHover("first")}
             onMouseLeave={removeHover}
             width={28}
             height={28}
-            fill={
-              isHovering.firstSVG
-                ? "var(--main-red)"
-                : theme === "light"
-                ? "black"
-                : "white"
-            }
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
           >
@@ -60,12 +55,10 @@ export default function Socials() {
       <a href="https://t.me/KamyarAzz" target="_blank">
         <div className="cursor-pointer" title="Telegram">
           <svg
-            fill={
+            className={
               isHovering.secondSVG
-                ? "var(--main-red)"
-                : theme === "light"
-                ? "black"
-                : "white"
+                ? "fill-mainRed"
+                : "fill-black dark:fill-white"
             }
             onMouseEnter={() => addHover("second")}
             onMouseLeave={removeHover}
@@ -81,12 +74,10 @@ export default function Socials() {
       <a href="https://github.com/KamyarAzz" target="_blank">
         <div className="cursor-pointer" title="Github">
           <svg
-            fill={
+            className={
               isHovering.thirdSVG
-                ? "var(--main-red)"
-                : theme === "light"
-                ? "black"
-                : "white"
+                ? "fill-mainRed"
+                : "fill-black dark:fill-white"
             }
             onMouseEnter={() => addHover("third")}
             onMouseLeave={removeHover}

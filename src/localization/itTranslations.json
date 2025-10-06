@@ -57,5 +57,19 @@
   "nft": "Sito web del mercato NFT.",
   "weather": "Un'applicazione meteorologica moderna costruita con React. Fornisce agli utenti dati meteorologici in tempo reale, previsioni e approfondimenti per qualsiasi posizione in tutto il mondo.",
   "restaurant": "Un sito web di menu per ristoranti reattivo che presenta un design elegante e un'interfaccia user-friendly, consentendo ai visitatori di esplorare il menu, conoscere il ristorante e fare prenotazioni.",
-  "alibaba": "Clone del sito web di Alibaba Airways."
+  "alibaba": "Clone del sito web di Alibaba Airways.",
+  "Devlog": "Devlog",
+  "Search": "Cerca",
+  "devlogError": "Si è verificato un errore, riprova più tardi.",
+  "emptyArray": "Nessun post disponibile al momento.",
+  "Sort": "Ordina",
+  "Return": "Torna",
+  "Comments": "Commenti",
+  "Comment": "Invia commento",
+  "Leave a comment": "Lascia un commento",
+  "Message": "Messaggio",
+  "Like": "Metti mi piace",
+  "acv7": "Un sistema avanzato di controllo accessi progettato specificamente per scuole e istituti educativi, che consente il monitoraggio in tempo reale degli ingressi e delle uscite degli studenti. Il sistema fornisce report dettagliati e notifica automaticamente i genitori quando i figli arrivano o lasciano la scuola.",
+  "smpProj": "Ho progettato e sviluppato il sito ufficiale di Saman Madar Pars per presentare le loro soluzioni intelligenti di autenticazione.",
+  "viuna": "Ho ridisegnato il sito web aziendale con un layout moderno, navigazione migliorata e una struttura più chiara per presentare i progetti software e hardware. Particolare attenzione è stata data alla reattività e alla facilità di aggiornamento dei contenuti."
 }

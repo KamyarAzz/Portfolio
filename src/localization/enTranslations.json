@@ -57,5 +57,19 @@
   "nft": "NFT Marketplace website.",
   "restaurant": "A responsive restaurant menu website that features an elegant design and user-friendly interface, allowing visitors to explore the menu, learn about the restaurant, and make reservations.",
   "weather": "A modern weather application built with React. It provides users with real-time weather data, forecasts, and insights for any location around the globe.",
-  "alibaba": "Alibaba airways website clone."
+  "alibaba": "Alibaba airways website clone.",
+  "Devlog": "Devlog",
+  "Search": "Search",
+  "devlogError": "An error occurred please try again later.",
+  "emptyArray": "No posts available at the moment.",
+  "Sort": "Sort",
+  "Return": "Return",
+  "Comments": "Comments",
+  "Comment": "Comment",
+  "Leave a comment": "Leave a comment",
+  "Message": "Message",
+  "Like": "Like",
+  "acv7": "An advanced access control system designed specifically for schools and educational institutions, enabling real-time monitoring of student entries and exits. The system provides detailed reporting and automatically notifies parents when their children arrive at or leave school",
+  "smpProj": "Designed and developed the official website for Saman Madar Pars to present their smart authentication solutions.",
+  "viuna": "Redesigned the company website with a modern layout, improved navigation, and clearer structure for showcasing software and hardware projects. Emphasis on responsiveness and ease of content updates."
 }
