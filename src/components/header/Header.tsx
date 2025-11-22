@@ -7,8 +7,7 @@ import iranFlag from "@/assets/images/flags/iran 1.svg";
 import arabicFlag from "@/assets/images/flags/saudi arabia 1.svg";
 import italianFlag from "@/assets/images/flags/italy.svg";
 import spanishFlag from "@/assets/images/flags/spain 1.svg";
-import englishCV from "@/assets/resume/Kamyar Azizi - CV.pdf";
-import farsiCV from "@/assets/resume/رزومه کامیار عزیزی.pdf";
+import englishCV from "@/assets/resume/Kamyar Azizi - Frontend Developer.pdf";
 import {cn} from "@/lib/utils";
 import {TTooltip} from "@/lib/type";
 
@@ -57,7 +56,7 @@ export default function Header() {
     isVisible: false,
     text: "",
   });
-  const [openCV, setOpenCV] = useState(false);
+  // const [openCV, setOpenCV] = useState(false);
   const [openLang, setOpenLang] = useState(false);
   const [availableLangs, setAvailableLangs] = useState<TFlag[]>(flags.slice(1));
   const [currentLang, setCurrentLang] = useState<TFlag>(flags[0]);
@@ -129,10 +128,16 @@ export default function Header() {
     }
   };
 
-  const switchCV = () => {
-    setOpenCV(!openCV);
-  };
+  // const switchCV = () => {
+  //   setOpenCV(!openCV);
+  // };
 
+  /*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Switches the language dropdown visibility
+   * and resets the tooltip visibility and text
+   */
+  /*******  c113e725-5aa0-40a0-a776-50a619c27cfa  *******/
   const switchLang = () => {
     setOpenLang(!openLang);
     setTooltip({isVisible: false, text: ""});
@@ -146,20 +151,20 @@ export default function Header() {
     setTooltip({isVisible: false, text: ""});
   };
 
-  function handleCVClickOutside(event: MouseEvent) {
-    if (cvRef.current && !cvRef.current.contains(event.target as Node)) {
-      setOpenCV(false);
-    }
-  }
+  // function handleCVClickOutside(event: MouseEvent) {
+  //   if (cvRef.current && !cvRef.current.contains(event.target as Node)) {
+  //     setOpenCV(false);
+  //   }
+  // }
 
-  useEffect(() => {
-    if (openCV) {
-      document.addEventListener("click", handleCVClickOutside);
-      return () => {
-        document.removeEventListener("click", handleCVClickOutside);
-      };
-    }
-  }, [openCV]);
+  // useEffect(() => {
+  //   if (openCV) {
+  //     document.addEventListener("click", handleCVClickOutside);
+  //     return () => {
+  //       document.removeEventListener("click", handleCVClickOutside);
+  //     };
+  //   }
+  // }, [openCV]);
 
   function handleLangClickOutside(event: MouseEvent) {
     if (langRef.current && !langRef.current.contains(event.target as Node)) {
@@ -322,29 +327,29 @@ export default function Header() {
             <path d="M190.6 66.8c-38.8 37.8-62.9 90.7-62.9 149.2c0 108.9 83.5 198.3 189.9 207.3C289.8 439 257.7 448 223.5 448C117.7 448 32 362.1 32 256c0-94.8 68.5-173.5 158.6-189.2zm66.1-21.5c-1.5-6.9-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3z" />
           </svg>
         </div>
-        <div
-          className="relative flex flex-col items-center justify-center w-8 h-8 cursor-pointer"
-          title={t("sideMenu3")}
-          ref={cvRef}
-        >
-          <svg
-            onClick={switchCV}
-            className={cn(
-              isHovering.thirdSVG
-                ? "fill-[#b91c1c]"
-                : "dark:fill-white fill-black",
-              "z-50 transition-transform duration-100 min-h-6 hover:-rotate-12"
-            )}
-            onMouseEnter={() => addHover("third")}
-            onMouseLeave={removeHover}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 384 512"
-            width={25}
-            height={25}
-          >
-            <path d="M320 480H64c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32H192V144c0 26.5 21.5 48 48 48H352V448c0 17.7-14.3 32-32 32zM240 160c-8.8 0-16-7.2-16-16V32.5c2.8 .7 5.4 2.1 7.4 4.2L347.3 152.6c2.1 2.1 3.5 4.6 4.2 7.4H240zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V163.9c0-12.7-5.1-24.9-14.1-33.9L254.1 14.1c-9-9-21.2-14.1-33.9-14.1H64zM208 240c0-8.8-7.2-16-16-16s-16 7.2-16 16V361.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l80 80c6.2 6.2 16.4 6.2 22.6 0l80-80c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L208 361.4V240z" />
-          </svg>
+        <a href={englishCV} target="_blank">
           <div
+            className="relative flex flex-col items-center justify-center w-8 h-8 cursor-pointer"
+            title={t("sideMenu3")}
+            ref={cvRef}
+          >
+            <svg
+              className={cn(
+                isHovering.thirdSVG
+                  ? "fill-[#b91c1c]"
+                  : "dark:fill-white fill-black",
+                "z-50 transition-transform duration-100 min-h-6 hover:-rotate-12"
+              )}
+              onMouseEnter={() => addHover("third")}
+              onMouseLeave={removeHover}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              width={25}
+              height={25}
+            >
+              <path d="M320 480H64c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32H192V144c0 26.5 21.5 48 48 48H352V448c0 17.7-14.3 32-32 32zM240 160c-8.8 0-16-7.2-16-16V32.5c2.8 .7 5.4 2.1 7.4 4.2L347.3 152.6c2.1 2.1 3.5 4.6 4.2 7.4H240zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V163.9c0-12.7-5.1-24.9-14.1-33.9L254.1 14.1c-9-9-21.2-14.1-33.9-14.1H64zM208 240c0-8.8-7.2-16-16-16s-16 7.2-16 16V361.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l80 80c6.2 6.2 16.4 6.2 22.6 0l80-80c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L208 361.4V240z" />
+            </svg>
+            {/*<div
             className={cn(
               openCV
                 ? "h-[140px] opacity-100 scale-100"
@@ -368,8 +373,9 @@ export default function Header() {
                 <p className="hover:text-red-700">Fa</p>
               </a>
             </div>
+          </div>*/}
           </div>
-        </div>
+        </a>
       </div>
     </header>
   );
