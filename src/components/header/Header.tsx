@@ -7,7 +7,7 @@ import iranFlag from "@/assets/images/flags/iran 1.svg";
 import arabicFlag from "@/assets/images/flags/saudi arabia 1.svg";
 import italianFlag from "@/assets/images/flags/italy.svg";
 import spanishFlag from "@/assets/images/flags/spain 1.svg";
-import englishCV from "@/assets/resume/Kamyar Azizi - Frontend Developer.pdf";
+import englishCV from "@/assets/resume/Kamyar_Azizi _Resume.pdf";
 import {cn} from "@/lib/utils";
 import {TTooltip} from "@/lib/type";
 
