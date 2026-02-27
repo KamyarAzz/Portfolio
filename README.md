@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio! This repository showcases my projects, skills, and experiences that highlight my journey in the tech world.
 
-[Preview](https://kamyarazizi.vercel.app/)
+[Preview](https://www.kamyarazizi.dev)
 
 ## Table of Contents
 
