@@ -7,7 +7,7 @@ import iranFlag from "@/assets/images/flags/iran 1.svg";
 import arabicFlag from "@/assets/images/flags/saudi arabia 1.svg";
 import italianFlag from "@/assets/images/flags/italy.svg";
 import spanishFlag from "@/assets/images/flags/spain 1.svg";
-import englishCV from "@/assets/resume/Kamyar_Azizi _Resume.pdf";
+import englishCV from "@/assets/resume/Kamyar_Azizi_Resume.pdf";
 import {cn} from "@/lib/utils";
 import {TTooltip} from "@/lib/type";
 
@@ -109,12 +109,12 @@ export default function Header() {
       root.classList.toggle("dark", isDark);
       documentElement.style.setProperty(
         "--scrollbar-bg",
-        isDark ? "#2c2c2c" : "#fff"
+        isDark ? "#2c2c2c" : "#fff",
       );
 
       documentElement.style.setProperty(
         "--project-background",
-        isDark ? "#262626" : "#D0D0D0"
+        isDark ? "#262626" : "#D0D0D0",
       );
     }
   };
@@ -194,7 +194,7 @@ export default function Header() {
       <nav
         className={cn(
           "hidden md:flex flex-grow justify-center items-end gap-5 text-lg list-none",
-          i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+          i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
         )}
       >
         <Link
@@ -203,7 +203,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname === "/home"
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("home")}
@@ -214,7 +214,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname === "/about"
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("menu1")}
@@ -225,7 +225,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname === "/skills"
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("menu2")}
@@ -236,7 +236,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname === "/projects"
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("projects")}
@@ -247,7 +247,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname === "/contact"
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("menu3")}
@@ -258,7 +258,7 @@ export default function Header() {
             "border-b hover:text-red-700 cursor-pointer",
             location.pathname.includes("/devlog")
               ? "border-red-700"
-              : "border-transparent"
+              : "border-transparent",
           )}
         >
           {t("Devlog")}
@@ -281,7 +281,7 @@ export default function Header() {
               openLang
                 ? "h-[250px] opacity-100 scale-100"
                 : "h-0 opacity-0 scale-95",
-              "absolute overflow-hidden dark:shadow-dropdown-dark shadow-dropdown-light -top-1.5 w-full bg-lightBg dark:bg-darkCharcoal pb-3 rounded-full pt-14 px-5 transition-all duration-300 ease-in-out transform"
+              "absolute overflow-hidden dark:shadow-dropdown-dark shadow-dropdown-light -top-1.5 w-full bg-lightBg dark:bg-darkCharcoal pb-3 rounded-full pt-14 px-5 transition-all duration-300 ease-in-out transform",
             )}
           >
             <div className="flex flex-col items-center justify-center gap-5">
@@ -338,7 +338,7 @@ export default function Header() {
                 isHovering.thirdSVG
                   ? "fill-[#b91c1c]"
                   : "dark:fill-white fill-black",
-                "z-50 transition-transform duration-100 min-h-6 hover:-rotate-12"
+                "z-50 transition-transform duration-100 min-h-6 hover:-rotate-12",
               )}
               onMouseEnter={() => addHover("third")}
               onMouseLeave={removeHover}
