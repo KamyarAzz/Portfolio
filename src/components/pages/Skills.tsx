@@ -20,7 +20,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="border-green-600 hover:bg-green-600">
@@ -48,7 +48,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="border-yellow-500 hover:bg-yellow-500">
@@ -70,7 +70,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="border-purple-500 hover:bg-purple-500">
@@ -92,7 +92,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 pb-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="border-blue-500 hover:bg-blue-500">
@@ -120,7 +120,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="hover:bg-rose-700 border-rose-700">npm</SkillBox>
@@ -141,7 +141,7 @@ export default function Skills() {
         <div
           className={cn(
             "flex flex-wrap justify-start gap-4 w-full",
-            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row"
+            i18n.dir(i18n.language) === "rtl" ? "flex-row-reverse" : "flex-row",
           )}
         >
           <SkillBox className="border-gray-600 hover:bg-gray-600">
@@ -149,6 +149,12 @@ export default function Skills() {
           </SkillBox>
           <SkillBox className="border-gray-600 hover:bg-gray-600">
             Express
+          </SkillBox>
+          <SkillBox className="border-gray-600 hover:bg-gray-600">
+            MongoDB
+          </SkillBox>
+          <SkillBox className="border-gray-600 hover:bg-gray-600">
+            Mongoose
           </SkillBox>
         </div>
       </div>
