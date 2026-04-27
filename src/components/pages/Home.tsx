@@ -22,14 +22,14 @@ export default function Home() {
       <BlurFade
         className={cn(
           "flex flex-col gap-3 md:gap-4 md:max-w-[35%]",
-          i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr"
+          i18n.dir(i18n.language) === "rtl" ? "rtl" : "ltr",
         )}
       >
         <p className="text-lg md:text-xl">{t("welcome")}</p>
         <h1
           className={cn(
             "flex flex-col font-semibold text-4xl text-left md:text-7xl",
-            i18n.dir(i18n.language) === "rtl" ? "text-right" : "text-left"
+            i18n.dir(i18n.language) === "rtl" ? "text-right" : "text-left",
           )}
         >
           {t("name")}
@@ -39,7 +39,9 @@ export default function Home() {
           <p className="text-lg text-red-700 md:text-xl">{t("title2")}&nbsp;</p>
           <p className="text-xl">{t("title3")} </p>
         </div>
-        <p className="flex text-base md:text-lg">{t("main")}</p>
+        <p className="flex text-base text-justify text- md:text-lg">
+          {t("main")}
+        </p>
 
         <Button
           onClick={btnClickHandler}
